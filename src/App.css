@@ -1,32 +1,130 @@
 body {
   text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 35px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #000;
+  padding: 20px;
+}
+
+nav a {
+  color: white;
+  font-size: 20px;
+}
+
+nav a:hover {
+  font-weight: 700;
 }
 
 .home {
-  width: 100vh;
-  height: 100vh;
-  background: url('./images/charles.jpg') right top/contain no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.shop {
-  margin: 20px 100px;
+.home h1 {
+  margin: 50px 0;
+}
+
+.home img {
+  justify-self: end;
+  height: 100vh;
+  width: 100%;
+}
+
+.home li {
+  font-size: 30px;
+  margin: 50px;
+}
+
+.home a {
+  color: #000;
+}
+
+.home a:hover {
+  font-weight: 700;
 }
 
 .items {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  justify-content: space-around;
+  grid-auto-rows: 270px;
+  justify-content: space-between;
+  justify-items: center;
   align-items: center;
   padding: 0;
-  list-style: none;
+  margin: 0 100px;
 }
+
+.items li {
+  width: max-content;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
 img {
   height: 200px;
   width: 200px;
   object-fit: cover;
 }
 
+.items img:hover {
+  height: 210px;
+  width: 210px;
+}
+
 .add-to-cart {
+  padding: 4px;
   cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+
+.item-page figure {
+  margin-top: 100px;
+}
+
+.cart-list {
+  padding: 0;
+  display: grid;
+  justify-content: center;
+}
+
+.cart-item {
+  justify-self: center;
+}
+
+.cart-item figure {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+}
+
+.cart-item img {
+  margin: 20px;
+}
+
+.cart-item figcaption {
+  margin: 20px;
 }

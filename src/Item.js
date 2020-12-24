@@ -25,17 +25,25 @@ const Item = ({ match }) => {
   };
 
   return (
-    <div>
-      <Link to="/cart">View cart ({cartContext.items.length})</Link>
-      <img src={item.src} alt="" />
-      <p>Cost: {item.price}</p>
-      <p className="add-to-cart" onClick={handleClick}>Add to cart</p>
-      <p>
-        <Link to="/shop">Back to shop</Link>
-      </p>
-      <p>
-        <Link to="/">Take me home</Link>
-      </p>
+    <div className="item-page">
+      <nav className="item-nav">
+        <ul>
+          <li>
+            <Link to="/">Take me home</Link>
+          </li>
+          <li><Link to="/shop">Back to shop</Link></li>
+          <li>
+            <Link to="/cart">View cart ({cartContext.items.length})</Link>
+          </li>
+        </ul>
+      </nav>
+      <figure>
+        <img src={item.src} alt="" />
+        <figcaption>
+          <p>Cost: {item.price}</p>
+          <button className="add-to-cart" onClick={handleClick}>Add to cart</button>
+        </figcaption>
+      </figure>
     </div>
   );
 };

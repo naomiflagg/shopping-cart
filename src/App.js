@@ -8,7 +8,6 @@ import Item from './Item';
 
 const App = () => {
   const [items, setItems] = useState([]);
-
   const addToCart = (item) => {
     setItems((items) => items.concat(item));
   };

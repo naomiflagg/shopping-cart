@@ -8,13 +8,13 @@ const Shop = () => {
 
   return (
     <div className="shop">
-      <nav>
+      <nav className="shop-nav">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Take me home</Link>
           </li>
           <li>
-            <Link to="/cart">View cart ({cartContext.items.length})</Link>
+            <Link to="/cart">View my cart ({cartContext.items.length})</Link>
           </li>
         </ul>
       </nav>
