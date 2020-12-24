@@ -26,7 +26,7 @@ const Item = ({ match }) => {
 
   return (
     <div>
-      <Link to="/cart">View cart</Link>
+      <Link to="/cart">View cart ({cartContext.items.length})</Link>
       <img src={item.src} alt="" />
       <p>Cost: {item.price}</p>
       <p onClick={handleClick}>Add to cart</p>

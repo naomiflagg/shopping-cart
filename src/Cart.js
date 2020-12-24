@@ -10,7 +10,7 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h1>About us:</h1>
+      <h1>My cart</h1>
       <p>This is awesome!</p>
     </div>
   );
