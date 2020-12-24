@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { CartContext } from './CartContext';
+import Home from './Home';
+import Shop from './Shop';
+import Cart from './Cart';
+import Item from './Item';
 
-function App() {
+const App = () => {
+  const [items, setItems] = useState([]);
+
+  const addToCart = (item) => {
+    setItems((items) => items.concat(item));
+  };
+
+  const removeFromCart = (item) => {
+    setItems((items) => items.splice(item, 1));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartContext.Provider
+      value={{
+        items: items,
+        addToCart: addToCart,
+        removeFromCart: removeFromCart
+      }}
+    >
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/shop" component={Shop} />
+          <Route exact path="/cart" component={Cart} />
+          <Route path="/shop/:id" component={Item} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </BrowserRouter>
+    </CartContext.Provider>
   );
-}
+};
 
 export default App;
