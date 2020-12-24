@@ -1,17 +1,38 @@
-import React, { useContext } from 'react';
-import { CartContext } from './CartContext'
+import React, { useContext, useState, useEffect } from 'react';
+import { CartContext } from './CartContext';
+import items from './items';
 
 const Cart = () => {
-  const cartContext = useContext(CartContext)
-  
-  for (const item of cartContext.items) {
-    console.log(item)
-  }
+  const cartContext = useContext(CartContext);
+  const [cartItems, setCartItems] = useState({});
+
+  useEffect(() => {
+    iterateCart();
+  }, []);
+
+  const iterateCart = () => {
+    let tempCart = {};
+    for (const item of cartContext.items) {
+      tempCart[item.id] = tempCart[item.id] + 1 || 1;
+    }
+    setCartItems(tempCart);
+  };
 
   return (
     <div className="cart">
-      <h1>My cart</h1>
-      <p>This is awesome!</p>
+      <h1>My Cart</h1>
+      <ul>
+        {Object.keys(cartItems).map((itemid) => {
+          let cartItem = items.find(({ id }) => id === itemid);
+          return (
+            <li key={itemid}>
+              <img src={cartItem.src} alt='' />
+              <p>{cartItem.price}</p>
+              <p>{cartItems[itemid]}</p>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

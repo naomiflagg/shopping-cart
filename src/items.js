@@ -22,6 +22,7 @@ const items = [
 // Add an id to each item
 for (const item of items) {
   item.id = uniqid();
+  item.num = 0;
 }
 
 export default items;
