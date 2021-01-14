@@ -29,7 +29,7 @@ const App = () => {
           <Route exact path="/shop" component={Shop} />
           <Route exact path="/cart" component={Cart} />
           <Route path="/shop/:id" component={Item} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/shopping-cart" component={Home} />
         </Switch>
       </BrowserRouter>
     </CartContext.Provider>

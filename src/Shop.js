@@ -11,7 +11,7 @@ const Shop = () => {
       <nav className="shop-nav">
         <ul>
           <li>
-            <Link to="/">Take me home</Link>
+            <Link to="/shopping-cart">Take me home</Link>
           </li>
           <li>
             <Link to="/cart">View my cart ({cartContext.items.length})</Link>

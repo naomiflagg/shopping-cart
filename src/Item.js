@@ -29,7 +29,7 @@ const Item = ({ match }) => {
       <nav className="item-nav">
         <ul>
           <li>
-            <Link to="/">Take me home</Link>
+            <Link to="/shopping-cart">Take me home</Link>
           </li>
           <li><Link to="/shop">Back to shop</Link></li>
           <li>
